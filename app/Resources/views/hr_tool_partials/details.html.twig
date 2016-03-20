@@ -1,0 +1,107 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Details Employee {{ employee.surname }}{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+
+<style>
+    h1,.row{
+        margin-bottom:10px;
+    }
+</style>
+
+{% endblock %}
+
+{% block body %}
+
+    {{ dump() }}
+
+    <div class="container-fluid">
+
+        <div class="container">
+
+            <h1>Details page</h1>
+
+<div class="row">
+    <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-4">
+                    Name
+                </div>
+
+                <div class="col-md-6">
+                    <span>{{ employee.name }}</span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    Surname
+                </div>
+
+                <div class="col-md-6">
+                    <span>{{ employee.surname }}</span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    Gender
+                </div>
+
+                <div class="col-md-6">
+                    <span>{{ employee.gender}}</span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    Age
+                </div>
+
+                <div class="col-md-6">
+                    <span>{{ employee.age}}</span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    Position
+                </div>
+
+                <div class="col-md-6">
+                    <span>{{ employee.position}}</span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    Grade
+                </div>
+
+                <div class="col-md-6">
+                    <span>{{ employee.grade}}</span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    Assessment
+                </div>
+
+                <div class="col-md-6">
+                    <span>{{ employee.assessment}}</span>
+                </div>
+            </div>
+
+    </div>
+</div>
+
+
+           <button onclick="history.go(-1);">Back</button>
+
+        </div>
+    </div>
+
+{% endblock %}
+

@@ -21,6 +21,14 @@
     }
     .table_cell{
         border:1px solid #666666;
+        padding:5px;
+    }
+    .table_header{
+        background-color:#000;
+        color:#fff;
+    }
+    button{
+        min-width:31%;
     }
 </style>
 
@@ -42,6 +50,7 @@
                     <div class="table_cell">Name</div>
                     <div class="table_cell">Surname</div>
                     <div class="table_cell">Position</div>
+                    <div class="table_cell">Controllers</div>
                 </div>
 
                 {%for employee in employees %}
@@ -50,6 +59,11 @@
                         <div class="table_cell">{{ employee.name }}</div>
                         <div class="table_cell">{{ employee.surname }}</div>
                         <div class="table_cell">{{ employee.position }}</div>
+                        <div class="table_cell">
+                            <button class="btn-default">Edit</button>
+                            <a href="list/{{ employee.id }}"> <button class="btn-success">Details</button></a>
+                            <a href="list/delete/{{ employee.id }}"> <button class="btn-danger">Delete</button></a>
+                        </div>
                     </div>
                 {% endfor %}
 
