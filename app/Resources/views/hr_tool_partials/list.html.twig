@@ -1,8 +1,66 @@
 {% extends 'base.html.twig' %}
 
-{% block body %}
-    works!
+{% block title %}List Employees{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+
+<style>
+    h1{
+        margin-bottom:10px;
+    }
+    .table{
+        border:1px solid #666666;
+    }
+    .table_row{
+        width:100%;
+        display:table;
+        table-layout: fixed;
+    }
+    .table_row div{
+        display:table-cell;
+    }
+    .table_cell{
+        border:1px solid #666666;
+    }
+</style>
 
 {% endblock %}
 
+{% block body %}
+
+    {{ dump() }}
+
+    <div class="container-fluid">
+
+        <div class="container">
+
+            <h1>List page</h1>
+
+            <div class="table">
+                <div class="table_row table_header">
+                    <div class="table_cell">ID</div>
+                    <div class="table_cell">Name</div>
+                    <div class="table_cell">Surname</div>
+                    <div class="table_cell">Position</div>
+                </div>
+
+                {%for employee in employees %}
+                    <div class="table_row">
+                        <div class="table_cell">{{ employee.id }}</div>
+                        <div class="table_cell">{{ employee.name }}</div>
+                        <div class="table_cell">{{ employee.surname }}</div>
+                        <div class="table_cell">{{ employee.position }}</div>
+                    </div>
+                {% endfor %}
+
+            </div>
+
+
+
+        </div>
+
+
+    </div>
+
+{% endblock %}
 

@@ -13,6 +13,12 @@ class hrController extends Controller
      */
     public function listAction()
     {
-        return $this->render('hr_tool_partials\list.html.twig');
+
+        $employees=$this->getDoctrine()
+            ->getRepository("AppBundle:listEmployees")
+            ->findAll();
+
+
+        return $this->render('hr_tool_partials\list.html.twig', array('employees'=>$employees));
     }
 }
