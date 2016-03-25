@@ -13,17 +13,16 @@ class hrController extends Controller
      */
     public function listAction()
     {
-
         $employees=$this->getDoctrine()
             ->getRepository("AppBundle:listEmployees")
             ->findAll();
-
 
         return $this->render('hr_tool_partials\list.html.twig', array('employees'=>$employees));
     }
 
     /**
-     * @Route("/list/{id}", name="details")
+     * @Route("/list/{id}", name="details", requirements={"id": "\d+"}
+     *     )
      */
     public function detailAction($id)
     {
@@ -37,7 +36,7 @@ class hrController extends Controller
 
 
     /**
-     * @Route("list/delete/{$id}", name="delete")
+     * @Route("list/delete/{id}", name="delete")
      */
     public function deleteAction($id)
     {
