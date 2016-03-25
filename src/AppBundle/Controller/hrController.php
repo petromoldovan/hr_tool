@@ -30,6 +30,14 @@ class hrController extends Controller
     }
 
     /**
+     * @Route("/home", name="home")
+     */
+    public function homeAction()
+    {
+        return $this->render('hr_tool_partials\home.html.twig');
+    }
+
+    /**
      * @Route("/list/{id}", name="details", requirements={"id": "\d+"}
      *     )
      */

@@ -1,0 +1,37 @@
+{% block stylesheets %}
+
+    <style>
+        nav img{
+            max-height:100px;
+            margin:auto;
+        }
+        nav {
+            text-align: center;
+            border-top:4px solid #29ABE2;
+            position: fixed;
+            z-index: 2;
+            background: #fff;
+            width: 100%;
+
+            -webkit-box-shadow: 0px 2px 2px #a9a9a9;
+            -moz-box-shadow: 0px 2px 2px #a9a9a9;
+            box-shadow: 0px 2px 2px #a9a9a9;
+        }
+        .container-fluid.header_wrapper{
+            min-height:70px;
+            padding:0;
+        }
+
+    </style>
+{% endblock %}
+<div class="container-fluid header_wrapper">
+    <nav class="header_parent">
+
+        <div class="row">
+            <figure>
+                <img src="../Resources/img/img-logo.png" alt="logo">
+            </figure>
+        </div>
+
+    </nav>
+</div>

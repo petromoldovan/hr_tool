@@ -1,0 +1,93 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Home{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+
+<style>
+    .main_bg img {
+        width:100%;
+        height: 671px;
+        position: relative;
+    }
+    .slogan{
+        color:#fff;
+        position:absolute;
+        margin:auto;
+        top:200px;
+        width:100%;
+        text-align: center;
+    }
+    .slogan p:first-child {
+         font-size:72px;
+         font-weight: 600;
+    }
+    .slogan .annotate {
+        font-size: 30px;
+        font-weight: 400;
+        margin-top: 40px;
+    }
+    .icon_wrapper {
+        background-color: #fff;
+        border-radius: 100px;
+        width: 50px;
+        height: 50px;
+        margin: auto;
+        position: relative;
+        top: 100px;
+    }
+    .icon_wrapper i {
+        font-size: 40px;
+        color: #002176;
+        position: relative;
+        top: 8px;
+        left: 2px;
+        cursor: pointer;
+    }
+</style>
+
+{% endblock %}
+
+{% block body %}
+
+   {#{{ dump() }}#}
+
+    <div class="container-fluid">
+
+            <section class="row main_bg">
+                <figure>
+                    <img src="../Resources/img/bg-img.jpg" alt="background">
+                </figure>
+
+                <div class="slogan">
+                    <p>
+                        The most qualified, timely and caring <br>
+                        help that you could find
+                    </p>
+                    <p class="annotate">
+                        Lorem Ipsum è un testo segnaposto utilizzato della tipografia e della
+                    </p>
+
+                    <div class="icon_wrapper">
+                        <i class="glyphicon glyphicon-chevron-down"></i>
+                    </div>
+                </div>
+
+            </section>
+<br>
+        <br><br><br><br><br><br><br><br><br>
+
+
+
+
+
+            <section id="contact">
+
+
+
+            </section>
+
+    </div>
+
+{% endblock %}
+
