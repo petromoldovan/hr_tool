@@ -34,7 +34,17 @@ class hrController extends Controller
      */
     public function homeAction()
     {
-        return $this->render('hr_tool_partials\home.html.twig');
+
+        $products = [
+            ['id' => 1, 'category' => 'Real Estate', 'img' => '../Resources/img/products/img-add-real-estate.png', 'description' => 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.' ],
+            ['id' => 2, 'category' => 'Business', 'img' => '../Resources/img/products/img-add-business.png', 'description' => 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.'],
+            ['id' => 3, 'category' => 'Family', 'img' => '../Resources/img/products/img-add-family.png','description' => 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.'],
+            ['id' => 4, 'category' => 'Civil issues', 'img' => '../Resources/img/products/img-add-rent.png','description' => 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.'],
+            ['id' => 5, 'category' => 'Charity', 'img' => '../Resources/img/products/img-add-charity.png','description' => 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.'],
+            ['id' => 6, 'category' => 'Savings', 'img' => '../Resources/img/products/img-add-save.png','description' => 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.'],
+        ];
+
+        return $this->render('hr_tool_partials\home.html.twig', array('products'=>$products));
     }
 
     /**

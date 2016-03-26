@@ -44,6 +44,54 @@
         left: 2px;
         cursor: pointer;
     }
+    .service_img {
+        height:121px;
+        overflow: hidden;
+    }
+    .service_img:hover img {
+        position: relative;
+        bottom:121px;
+    }
+    #products_section {
+        background-color: #E5E5E5;
+    }
+    #products_section .product_blocks {
+        text-align: center;
+        padding:20px 0;
+    }
+    label {
+        font-weight: 400;
+        font-size: 12px;
+        padding: 0 15px;
+        text-align: center;
+    }
+    .product_category {
+        text-transform: uppercase;
+        margin: 15px 0 10px 0;
+        display: block;
+        font-size: 16px;
+        font-weight: 600;
+    }
+    .product_info h3{
+        font-size:30px;
+    }
+    .glyphicon-info-sign {
+        color:#002176;
+    }
+    .product_info{
+        background-color: #fff;
+        font-size: 18px;
+        font-weight: 400;
+        padding: 0 40px;
+        min-height:410px;
+    }
+    .read_more {
+        padding-left:5px;
+        color: #002176;
+    }
+    #arrow_target_about{
+        top:50px;
+    }
 </style>
 
 {% endblock %}
@@ -68,24 +116,55 @@
                         Lorem Ipsum è un testo segnaposto utilizzato della tipografia e della
                     </p>
 
-                    <div class="icon_wrapper">
+                    <div class="icon_wrapper" id="arrow_target_products">
                         <i class="glyphicon glyphicon-chevron-down"></i>
                     </div>
                 </div>
 
             </section>
-<br>
-        <br><br><br><br><br><br><br><br><br>
+
+            <section class="row" id="products_section">
+
+                {% for product in products %}
+
+                    <div class="col-md-2 product_blocks">
+                        <figure class="service_img">
+                            <img src="{{ product.img }}" alt="{{ product.category }} image">
+                        </figure>
+
+                        <label>
+                            <span class="product_category">{{ product.category }}</span>
+                            <span>{{ product.description }}</span>
+                        </label>
+                    </div>
+
+                {% endfor %}
 
 
+                <div class="col-md-12 product_info">
 
+                    <h3>
+                        Our services at glance
+                    </h3>
 
+                    <p>
+                        There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined. Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+                    </p>
 
-            <section id="contact">
+                    <p>
+                        <a href="#"><i class="glyphicon glyphicon-info-sign"></i><span class="read_more">Read more</span></a>
+                    </p>
 
+                    <div class="icon_wrapper" id="arrow_target_about">
+                        <i class="glyphicon glyphicon-chevron-down"></i>
+                    </div>
 
+                </div>
 
             </section>
+
+
+
 
     </div>
 
