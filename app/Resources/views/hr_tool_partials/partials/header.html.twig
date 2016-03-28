@@ -21,7 +21,11 @@
             min-height:70px;
             padding:0;
         }
-
+.logIn {
+    position: absolute;
+    right:10px;
+    top:10px;
+}
     </style>
 {% endblock %}
 <div class="container-fluid header_wrapper">
@@ -33,5 +37,13 @@
             </figure>
         </div>
 
+        {% set currentPath = path(app.request.attributes.get('_route'),app.request.attributes.get('_route_params')) %}
+        {% if currentPath == '/hr_tool/web/app_dev.php/home' %}
+        <div class="logIn">
+            <form>
+                1
+            </form>
+        </div>
+        {% endif %}
     </nav>
 </div>

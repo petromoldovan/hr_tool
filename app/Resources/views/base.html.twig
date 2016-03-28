@@ -30,11 +30,18 @@
                         $('.header_parent').stop().animate({height: "100px"},300);
                     }
                 });
-                $('arrow_target_products').on('click',function(){
+                $('#arrow_target_products').on('click',function(){
                     $("html, body").animate({
                         scrollTop: $('#products_section').offset().top
                     }, 2000);
+                });
+                $('#arrow_target_about').on('click',function(){
+                    $("html, body").animate({
+                        scrollTop: $('#contact_section').offset().top
+                    }, 2000);
                 })
+
+
 
             </script>
 

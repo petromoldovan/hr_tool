@@ -44,7 +44,13 @@ class hrController extends Controller
             ['id' => 6, 'category' => 'Savings', 'img' => '../Resources/img/products/img-add-save.png','description' => 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.'],
         ];
 
-        return $this->render('hr_tool_partials\home.html.twig', array('products'=>$products));
+        $partners = [
+            ['id' => 2, 'img' => '../Resources/img/partners/partner2.png' ],
+            ['id' => 1, 'img' => '../Resources/img/partners/partner1.png' ],
+            ['id' => 3, 'img' => '../Resources/img/partners/partner logo3.png' ],
+          ];
+
+        return $this->render('hr_tool_partials\home.html.twig', array('products'=>$products, 'partners'=>$partners));
     }
 
     /**
