@@ -129,10 +129,12 @@
         -ms-transition: all 0.5s;
         -o-transition: all 0.5s;
         transition: all 0.5s;
+        border: 3px solid #000;
     }
     .submit_button:hover input {
         background-color: #fff;
         color:#000;
+        border: 3px solid #000;
     }
     #contact_section {
         position: relative;
@@ -256,19 +258,20 @@
 
 {% block body %}
 
-   {#{{ dump() }}#}
+   {{ dump() }}
 
     <div class="container-fluid">
 
             <section class="row main_bg">
+
                 <figure>
-                    <img src="../Resources/img/bg-img.jpg" alt="background">
+                    <img src="{{ asset('Resources/img/bg-img.jpg') }}" alt="background">
                 </figure>
 
                 <div class="slogan">
+
                     <p>
-                        The most qualified, timely and caring <br>
-                        help that you could find
+                        {{ 'home.slogan_text'|trans|raw }}
                     </p>
                     <p class="annotate">
                         Lorem Ipsum è un testo segnaposto utilizzato della tipografia e della
@@ -339,7 +342,7 @@
 
                 <div class="row overflow_contact">
                     <figure>
-                        <img src="../Resources/img/bg-office-trimm3.jpg" alt="bg-img">
+                        <img src="{{ asset('Resources/img/bg-office-trimm3.jpg') }}" alt="bg-img">
                     </figure>
                 </div>
 

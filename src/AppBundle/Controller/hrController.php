@@ -4,15 +4,14 @@ namespace AppBundle\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\Form\SubmitButton;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\listEmployees;
+use AppBundle\Entity\login;
 
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 
 class hrController extends Controller
@@ -30,10 +29,27 @@ class hrController extends Controller
     }
 
     /**
-     * @Route("/home", name="home")
+     * @Route("/home/{_locale}", name="home")
+     *
      */
-    public function homeAction()
+    public function homeAction(Request $request)
     {
+
+        //login------------------------------
+        if($request->getMethod()=='POST'){
+            $username=$request->get('user');
+            $password=$request->get('password');
+
+            $user=$this->getDoctrine()
+                ->getRepository("AppBundle:login")
+                ->findOneBy(array('user'=>$username,'password'=>$password));
+
+            if($user){
+                return $this->render('base.html.twig');
+                echo $user;
+            }
+        }
+        //------------------------------------
 
         $products = [
             ['id' => 1, 'category' => 'Real Estate', 'img' => '../Resources/img/products/img-add-real-estate.png', 'description' => 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.' ],

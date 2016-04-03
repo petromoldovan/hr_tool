@@ -21,11 +21,15 @@
             min-height:70px;
             padding:0;
         }
-.logIn {
-    position: absolute;
-    right:10px;
-    top:10px;
-}
+        .logIn {
+            position: absolute;
+            right:10px;
+            top:10px;
+        }
+        .logIn input {
+            width:auto !important;
+            padding:0 !important;
+        }
     </style>
 {% endblock %}
 <div class="container-fluid header_wrapper">
@@ -33,15 +37,17 @@
 
         <div class="row">
             <figure>
-                <img src="../Resources/img/img-logo.png" alt="logo">
+                <img src="{{ asset('Resources/img/img-logo.png') }}" alt="logo">
             </figure>
         </div>
 
         {% set currentPath = path(app.request.attributes.get('_route'),app.request.attributes.get('_route_params')) %}
         {% if currentPath == '/hr_tool/web/app_dev.php/home' %}
         <div class="logIn">
-            <form>
-                1
+            <form method="post" action="{{ path('home') }}">
+                <input type="text" placeholder="user" name="user" id="user">
+                <input type="text" placeholder="password" name="password" id="password"><br>
+                <button class="success" type="submit">Sign in</button>
             </form>
         </div>
         {% endif %}
