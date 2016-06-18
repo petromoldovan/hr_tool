@@ -1,0 +1,7 @@
+test_homepage:
+    path:     /
+    defaults: { _controller: testBundle:Default:index }
+
+test_otherpage:
+    path:     /testother
+    defaults: { _controller: testBundle:Default:test }
