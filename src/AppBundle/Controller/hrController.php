@@ -155,4 +155,8 @@ class hrController extends Controller
 
         return $this->render('hr_tool_partials\create_new_employee.html.twig', array('employee_form'=>$form->createView()) );
     }
+
+    function testAction(){
+        return $this->render('hr_tool_partials\home.html.twig');
+    }
 }

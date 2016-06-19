@@ -5,3 +5,8 @@ app:
 app_api:
     resource: "@AppBundle/Controller/api"
     type:     annotation
+
+home_preview:
+    path: /testSome
+    defaults:
+            _controller: AppBundle:hr:test
